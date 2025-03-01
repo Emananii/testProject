@@ -1,0 +1,153 @@
+/* GENERAL STYLING */
+html {
+    background-color: #1b1b1b; /* Dark and ominous */
+    font-family: "Courier New", monospace; /* Like an old detective typewriter */
+    color: #ffebeb; /* Pale like you've been up all night fearing the cat */
+    text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.3); /* Subtle red shadow for suspense */
+}
+
+/* DRAMATIC HEADER */
+h1 {
+    color: #ff0000; /* Blood red */
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: paranoia-glow 1s infinite alternate; /* Flickering glow effect */
+}
+
+/* FLICKERING EFFECT (LIKE A GLITCHY WARNING) */
+@keyframes paranoia-glow {
+    0% { text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5); }
+    100% { text-shadow: 4px 4px 20px rgba(255, 0, 0, 0.8); }
+}
+
+/* TEXT STYLING */
+p, li {
+    color: rgb(255, 77, 77); /* Blood-red warnings */
+    font-style: italic; /* Whispered paranoia */
+    transition: color 0.3s ease-in-out;
+}
+
+p:hover, li:hover {
+    color: rgb(255, 0, 0); /* Gets more intense when hovered */
+}
+
+/* SUSPENSEFUL IMAGE STYLING */
+img {
+    width: 350px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.6); /* Glowing like an ominous warning */
+    transition: transform 0.3s ease-in-out, filter 0.5s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.1) rotate(-3deg); /* The image "stares back" at you */
+    filter: grayscale(80%); /* Black and white for extra creepiness */
+}
+
+/* CAT-SCRATCH BUTTONS */
+button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: black;
+    color: white;
+    border: 2px solid red;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* SCRATCH EFFECT */
+button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.2), transparent);
+    transition: all 0.3s ease-out;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* BUTTON PRESSED */
+button:active {
+    background-color: red;
+    color: black;
+    transform: scale(0.9);
+}
+
+/* DANGER MODE FOR BUTTONS */
+button.click {
+    color: #ff0000;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+button.hover {
+    color: #ff5757;
+    font-style: italic;
+}
+
+/* PARANOIA MODE - BACKGROUND MOVES SLIGHTLY */
+@keyframes paranoia-mode {
+    0% { background-color: #1b1b1b; }
+    50% { background-color: #2d0000; } /* Pulses a dark red */
+    100% { background-color: #1b1b1b; }
+}
+
+html:hover {
+    animation: paranoia-mode 5s infinite alternate;
+}
+
+/* TABLE - MAKING IT LOOK LIKE A SUSPICIOUS CRIME FILE */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 2px solid red;
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
+}
+
+th, td {
+    border: 1px solid red;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.2); /* Blood-stained look */
+}
+
+th {
+    background-color: rgba(255, 0, 0, 0.7); /* Deep red warning */
+}
+
+/* SHAKING EFFECT FOR EMERGENCY TABLE */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+table:hover {
+    animation: shake 0.3s ease-in-out;
+}
+
+/* FOOTER - FINAL WARNING */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: red;
+    text-shadow: 2px 2px 8px red;
+    animation: paranoia-glow 2s infinite alternate;
+}
