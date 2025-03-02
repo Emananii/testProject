@@ -113,15 +113,38 @@ let y = 0;
    console.log("hello" === "Hello");
    console.log("hello" == "Hello");
 
-   document.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {  // When the user presses "Enter"
-        let name = prompt("What is your name?");  // Ask for input
-        sayHello(name);  // Call the function with the input
-    }
-});
-
+   
    function sayHello(name){
        console.log("Hello, " + name);
    }
+   let myThirdName = "Allan";
+   sayHello(myThirdName);
+   sayHello("Allan");
     sayHello("Lorraine");
      
+
+    let mySpace; //initialization
+    mySpace = 10; //assignment
+    console.log(mySpace);
+    
+    let myFirstName = "Evans"; //initialized and assigned
+    console.log(myFirstName);
+
+    let myAge = 20; //initialize and assigned
+    let myNewAge = myAge; //initialized and assigned
+    console.log(myNewAge);
+
+    let mySecondAge = [0, 1, 2, 3, 4];
+    let myNewSecondAge = mySecondAge;
+    console.log(myNewSecondAge);
+    let newString = "08808";
+    console.log(newString);
+
+    let newNumber = 10;
+    function timesTwo(newNumber){
+        return newNumber * 2;
+    }
+
+    console.log(timesTwo(newNumber));
+
+    console.log(timesTwo(30));
