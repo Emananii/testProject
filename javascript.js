@@ -166,28 +166,226 @@
    
 
 //     function calculateArea(width, height){
-//         area = width * height;
+//         let area = width * height;
 //         return area;
 //     }
 
 //     console.log(calculateArea(20, 30));
 
-    let x = 0;
-    let y = 0;
-    labelCancelLoops:// label for my outerloop
-    while (x <= 10) {
-        console.log("outer loops (x): ", x);
-        x+=1;
-        y=1;
-        while (y <=1000){
-            console.log("Inner loops (y): ", y);
-            y += 1;
-            if(y===20 && x===10) {
-                console.log("Breaking out of both loops");
-                break labelCancelLoops; 
-            } else if (y > 20) {
-                console.log("Y is greater than 20");
-                break;
-            }
+    // let x = 0;
+    // let y = 0;
+    // labelCancelLoops:// label for my outerloop
+    // while (x <= 10) {
+    //     console.log("outer loops (x): ", x);
+    //     x+=1;
+    //     y=1;
+    //     while (y <=1000){
+    //         console.log("Inner loops (y): ", y);
+    //         y += 1;
+    //         if(y===20 && x===10) {
+    //             console.log("Breaking out of both loops");
+    //             break labelCancelLoops; 
+    //         } else if (y > 20) {
+    //             console.log("Y is greater than 20");
+    //             break;
+    //         }
+    //     }
+    // }    
+
+    //continue statement
+
+    // for(let i=0; i < 10; i++){
+    //     if (i===3){
+    //         continue;
+    //     }
+    //     console.log(i);
+    // }
+
+
+    // let i = 0;
+    // let n = 0; 
+
+    //  while (i<5){
+    //      i++;
+    //      if (i === 3){
+    //          continue;
+    //      }
+    //      n += i;
+    //      console.log(n);
+    //  }
+
+    //  let i = 0;
+    //  let j = 10;
+
+    //  checkiandj:
+    //  while(i < 4){
+    //     console.log(i);
+    //     i+=1;
+    //     checkj: while( j > 4){
+    //         console.log(j)
+    //         j -= 1;
+    //         if (j % 2 == 0) {
+    //             continue checkj;
+    //         }
+    //         console.log(j, " is odd")
+    //     }
+    //     console.log("i = ", i);
+    //     console.log("j = ", j);
+    //  }
+
+     //for.. of statement
+
+    //  let arr = [3, 5, 7];
+
+    //  for (let i = 0; i < arr.length; i++){ 
+    //      console.log(arr[i]);
+    //  }
+
+    //  const name = "james";
+    //  for(let i = 0; i<name.length; i++){
+    //      console.log(name[i]);
+    //  }
+
+    //  let arr1 = [3, 5, 7];
+    //  for(let i of arr1){
+    //      console.log(i);
+    //  }
+
+    //  console.log("FOR-LOOP");
+    //  for (let i in arr1){
+    //      console.log(i);
+    //  }
+
+    //  //for..in statement
+
+    //  let car = {
+    //     make: "Toyota",
+    //     model: "Camry",
+    //     year: 2020
+    //  }
+    //  for (let key in car){
+    //     console.log(key, car[key]);
+    //  }
+
+
+    //function declaration
+
+    // function sum(a, b){
+    //     return a + b;
+    // }
+
+    // console.log(sum("james", "john"));
+
+    // function multiply(a, b){
+    //     const area = a * b;
+    //     return area;
+    // }
+
+    // console.log(multiply(2, 3));
+
+    // function addSquare (a,b){
+    //     function square (x){
+    //         return x * x;
+    //     }
+    //     return square(a) + square(b);
+    // }
+    
+    // console.log(addSquare(2, 3));
+
+    // function myFunction(a, b){
+    //     console.log(a*b);
+    // }
+
+    // myFunction(2, 3);
+
+    // function countdown(n){
+    //     if (n <= 0){ /**This is the base case which is basically a condition that stops the
+    //                 recursion preventing a stack overflow due to infinite recursion **/
+    //         console.log("No countdown necessary. You're in space");
+    //         return; //this is actually what stops the recursion.
+    //     }
+    //     console.log(n);// return the countdown after checking the base condition
+    //     countdown(n-1); /**recursive call. The function calls itself with a lower value for n.
+    //                      So this will run until n hits 0 then the base condition stops it
+    //                      otherwise the condition would have run forever into the negatives**/
+    // }
+
+    // countdown(20);
+
+
+    //function for getting factorials using ternary
+    const factorial = function fac(n){
+        return n < 2 ? 1 : n * fac(n-1);
+    }
+
+    console.log(factorial(3));
+//function for getting factorials using if else
+    const factorial2 = function fact(n){
+        if (n===0 || n===1){
+            return 1;
+    } else {
+        return n * factorial(n-1);
+    }
+}
+
+    console.log(factorial2(4));
+
+    function map(f,a){
+        const result = new Array(a.length);
+        for (let i=0; i<a.length; i++){
+            result[i] = f(a[i]);
         }
-    }    
+
+        return result;
+    }
+
+    const cubedFunc = function cubed(x){
+        return x * x * x; 
+    }
+
+    const numbers = [0, 1, 2, 5, 10]; 
+    const cubedNumbers = map(cubedFunc, numbers);
+    console.log(cubedNumbers);
+
+    let newFunc;
+
+    // if (num===0){
+    //     newFunc=function(car){
+    //         car.make= "Bugatti";
+    //     }
+    // }
+
+    console.log(cubedFunc(2));
+
+    function loop(x){
+        if (x >= 10){
+            return console.log("This is a loop");
+        }
+        loop (x + 1);
+    }
+
+    console.log(loop(0));
+
+    //arrow functions
+    const sum = (a, b) => a + b;
+
+    const squares = x => x*x;
+    const greet = () => "Hello, world!";
+
+    const cubes= (x) =>{
+        const result= x * x * x;
+        return result
+    }
+    console.log(sum(3,5));
+    console.log(squares(3));
+    console.log(greet());
+    console.log(cubes(3));
+
+    const a = ["hydrogen", "helium", "lithium", "beryllium"]; 
+    const a2 = a.map(function(s){
+        return s.length;
+    })
+
+    const a3 = a.map(s =>s.length)
+    console.log(a2);
+    console.log(a3);
