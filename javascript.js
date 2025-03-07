@@ -313,79 +313,243 @@
     // countdown(20);
 
 
-    //function for getting factorials using ternary
-    const factorial = function fac(n){
-        return n < 2 ? 1 : n * fac(n-1);
-    }
+//     //function for getting factorials using ternary
+//     const factorial = function fac(n){
+//         return n < 2 ? 1 : n * fac(n-1);
+//     }
 
-    console.log(factorial(3));
-//function for getting factorials using if else
-    const factorial2 = function fact(n){
-        if (n===0 || n===1){
-            return 1;
-    } else {
-        return n * factorial(n-1);
-    }
-}
+//     console.log(factorial(3));
+// //function for getting factorials using if else
+//     const factorial2 = function fact(n){
+//         if (n===0 || n===1){
+//             return 1;
+//     } else {
+//         return n * factorial(n-1);
+//     }
+// }
 
-    console.log(factorial2(4));
+//     console.log(factorial2(4));
 
-    function map(f,a){
-        const result = new Array(a.length);
-        for (let i=0; i<a.length; i++){
-            result[i] = f(a[i]);
-        }
+//     function map(f,a){
+//         const result = new Array(a.length);
+//         for (let i=0; i<a.length; i++){
+//             result[i] = f(a[i]);
+//         }
 
-        return result;
-    }
+//         return result;
+//     }
 
-    const cubedFunc = function cubed(x){
-        return x * x * x; 
-    }
+//     const cubedFunc = function cubed(x){
+//         return x * x * x; 
+//     }
 
-    const numbers = [0, 1, 2, 5, 10]; 
-    const cubedNumbers = map(cubedFunc, numbers);
-    console.log(cubedNumbers);
+//     const numbers = [0, 1, 2, 5, 10]; 
+//     const cubedNumbers = map(cubedFunc, numbers);
+//     console.log(cubedNumbers);
 
-    let newFunc;
+//     let newFunc;
 
-    // if (num===0){
-    //     newFunc=function(car){
-    //         car.make= "Bugatti";
-    //     }
-    // }
+//     // if (num===0){
+//     //     newFunc=function(car){
+//     //         car.make= "Bugatti";
+//     //     }
+//     // }
 
-    console.log(cubedFunc(2));
+//     console.log(cubedFunc(2));
 
-    function loop(x){
-        if (x >= 10){
-            return console.log("This is a loop");
-        }
-        loop (x + 1);
-    }
+//     function loop(x){
+//         if (x >= 10){
+//             return console.log("This is a loop");
+//         }
+//         loop (x + 1);
+//     }
 
-    console.log(loop(0));
+//     console.log(loop(0));
 
-    //arrow functions
-    const sum = (a, b) => a + b;
+//     //arrow functions
+//     const sum = (a, b) => a + b;
 
-    const squares = x => x*x;
-    const greet = () => "Hello, world!";
+//     const squares = x => x*x;
+//     const greet = () => "Hello, world!";
 
-    const cubes= (x) =>{
-        const result= x * x * x;
-        return result
-    }
-    console.log(sum(3,5));
-    console.log(squares(3));
-    console.log(greet());
-    console.log(cubes(3));
+//     const cubes= (x) =>{
+//         const result= x * x * x;
+//         return result
+//     }
+//     console.log(sum(3,5));
+//     console.log(squares(3));
+//     console.log(greet());
+//     console.log(cubes(3));
 
-    const a = ["hydrogen", "helium", "lithium", "beryllium"]; 
-    const a2 = a.map(function(s){
-        return s.length;
-    })
+//     const a = ["hydrogen", "helium", "lithium", "beryllium"]; 
+//     const a2 = a.map(function(s){
+//         return s.length;
+//     })
 
-    const a3 = a.map(s =>s.length)
-    console.log(a2);
-    console.log(a3);
+//     const a3 = a.map(s =>s.length)
+//     console.log(a2);
+//     console.log(a3);
+
+// function multiply(multiplier, ...Args){
+//     return Args.map(x => multiplier * x);
+// }
+
+// const arr = multiply(2, 1, 2, 3);
+// console.log(arr);
+
+// function getThis(){
+//     return this;
+// }
+
+// const obj1 = {name: "obj1"};
+// obj1.getThis = getThis;
+// console.log(obj1);
+
+// //console.log(obj1.getThis());
+
+// function Person(){
+//     //the Person () constructor defines 'this' as itself
+//     const self = this;
+//     self.age = 0;
+
+//     setInterval(function growUp(){
+//         self.age++;
+//         console.log(self);
+//     }, 1000);
+//     console.log(self);  
+// }
+// const p = new Person();
+// console.log(p);
+
+//indexed collections aka arrays
+// const emp= ["joan" , "rude", "lazy"];  
+// console.log(emp);
+// const empire= new Array(3);
+// console.log(empire);
+// const emp2 = new Array("john", 'jude');
+// console.log(emp2);
+// console.log(emp2.length);
+// const people = {
+//     0: "Gina",
+//     1: "Rina"
+// }
+
+// console.log(typeof people);
+
+// const paragraphs = document.getElementsByTagName('p');
+// console.log(paragraphs);
+
+// // for (let i= 0; p; (p= paragraphs[i]); i++){
+// //     console.log(paragraphs[i]);
+// // }
+
+// const colors = ["red", "green", "blue"];
+
+// for (let color in colors){
+//     console.log(colors[color]);
+// }
+// colors.forEach(color=>console.log(color));
+
+// let text="";
+// let cars=["BMW", "Volvo","Saab", "Ford"];
+// for (let i = 0; i < cars.length; i++) {
+//     text += cars[i] + "<br>";
+//     console.log(cars[i]);
+//     console.log(text);  
+//   }
+                //key  value
+//   let obj1 = {name: "John", age: 30, city: "New York"};
+
+// //for in loops iterate over keys
+//   for (let key in obj1){
+//       console.log(obj1[key]);
+//   }
+//    let array1 = ["John", "Doe", "Jane", "Doe"];
+
+//    for (let arrayKey in array1){
+//     if (arrayKey >1){
+//         break;
+//     }
+//     console.log(array1[arrayKey]);
+//    }
+
+// //for of loops iterate over values
+
+// let array2 = ["Brian", "Allan", "Me", "You"];
+
+// for (let value of array2){
+//     console.log(value);
+// }
+
+// let obj2 = {name: "John", age: 30, city: "New York"};
+
+// for (let value of Object.values(obj2)){
+//     console.log(obj2[value]);
+// }
+
+// const colors = ["red", "green", "blue"];
+
+// // for (let color in colors){
+// //      console.log(colors[color]);
+// //  }
+// colors.forEach(color=>console.log(color));
+// colors.forEach(function(col){
+//     console.log(col);
+// })
+
+//Array methods 
+//Concat method => this method is used to merge two or more arrays and returns a new array
+let myArr = ["John", "Doe", "Jane", "Doe", null, true, 5 + 1];
+let newArr = myArr.concat(1, 2, 3);
+
+console.log(newArr);
+console.log(myArr);
+
+//Join method => this method joins all elements of an array into a string
+const list = myArr.join("--");
+console.log(list);
+console.log(myArr);
+console.log(typeof(list));
+
+//push method
+const result = newArr.push(4,5,6);
+newArr.push(4);
+console.log(newArr);
+console.log(result);
+
+//pop method=> this method removes the last element of an array and returns it
+newArr.pop();
+console.log(newArr);
+
+//SHIFT => removes the first element of an array and returns it
+const shiftValue = newArr.shift();
+console.log(shiftValue);
+console.log(newArr);
+
+//UNSHIFT => kind of like the push method but it adds something to the front of the array instead
+const unshifResult = newArr.unshift("Brian", "Allan");
+console.log(newArr);
+console.log(unshifResult);
+
+//SLICE => the slice method extracts a section of an array and returns a new array
+const sliceValue = newArr.slice(1,7);
+console.log(newArr);
+console.log(sliceValue);
+
+//AT => returns the element at a specified index in an array
+const atValue = newArr.at(-2);
+console.log(atValue);
+
+//testing join method
+let arr2 = ["John", 10 +10];
+console.log(arr2);
+const joinValue = arr2.join(" ");
+console.log(joinValue);
+
+/**SPLICE => it modifies the contents of an array,removes existing elements, replaces them,
+ * or adds new elements in their place and returns the removed elements
+ */
+
+const spliceValue = arr2.splice(1, 0, "Doe");
+console.log(arr2);
+console.log(spliceValue);
