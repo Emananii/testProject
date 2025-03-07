@@ -497,6 +497,45 @@
 //     console.log(col);
 // })
 
+// function say(greeting, firstName) {
+//     return greeting + firstName;
+//    }
+ 
+//    console.log(multiply(2, 3));
+ 
+//    console.log(say("Hello, ", "John"));
+//   //let scopeTest = '10'; //Global variable
+//   //function declaration
+//    function multiply(firstNumber, secondNumber){
+//          let scopeTest = firstNumber * secondNumber; //local variable
+//          return scopeTest;
+//    }
+ 
+//    //fuction expression
+//    let functionExpression = function add(number1, number2){
+//        return number1 + number2;
+//    }
+ 
+//    console.log(functionExpression(2, 3));
+//    console.log(functionExpression);
+ 
+//    //arrowfunction
+//      let arrowFunction = (number1, number2) =>
+//          number1 + number2;
+ 
+//      console.log(arrowFunction(2,3));
+ 
+     /* Javascript runs in 2 phases. IN the first phase, it goes through the entire code
+     in milliseconds.While doing this it picks up very specific things eg. function declarations
+     ** so when javascript actually starts executing line by line it already knows theres a
+     function declaration somewhere*/
+ 
+     //GEc => global execution context
+     //function declarations
+     //variables : var, let, const
+     //Var => undefined;
+     //let and const => ReferenceError; They are put in something called a temporal deadzone.
+
 //Array methods 
 //Concat method => this method is used to merge two or more arrays and returns a new array
 let myArr = ["John", "Doe", "Jane", "Doe", null, true, 5 + 1];
@@ -550,6 +589,57 @@ console.log(joinValue);
  * or adds new elements in their place and returns the removed elements
  */
 
+//syntax of splice explained
+/* splice (start) => if start > length of the array, nothing will be deleted
+ * splice (start, deletecount)
+ * splice (start, deletecount, item1)
+ * splice (sart, deletecount, item1 ....itemN) */
+
+//example 1
 const spliceValue = arr2.splice(1, 0, "Doe");
 console.log(arr2);
 console.log(spliceValue);
+
+//example2
+const months = ["Jan", "March", "April", "June"];
+const splicedMonths = months.splice(0, 2, "Feb");
+console.log(months);
+console.log(splicedMonths);
+
+//example3
+const myFishes = ['angel', 'clown', 'mandarin', 'sturgeon'];
+const removed = myFishes.splice(2, 3, 'drum');
+console.log(myFishes);
+console.log(removed);
+
+//Reverse => this method reverses the elements in an array
+const reversed = myFishes.reverse();
+console.log(reversed);
+console.log(myFishes);
+
+/* flat() => creates a new array with all sub-array elements concatenated
+             into it recursively up to the specified depth*/
+
+let numArr = [1,2,3, [4,5,[6,7,[8,9]]]];
+console.log(numArr);
+numArr = numArr.flat(2);
+console.log(numArr);
+
+const myObj = {
+    favoriteNumber: 42,
+    isDeveloper: true,
+    firstname: "Oh",
+    newthing: 'new'
+}
+
+const propDesc = Object.getOwnPropertyDescriptor(myObj, "favoriteNumber");
+console.log(propDesc);
+const anotherObj={};
+Object.defineProperty(anotherObj, "fave", propDesc);
+console.log(anotherObj);
+
+
+let myList = [23, 42, 100];
+myList[14] = "Hello";
+console.log(myList[9]);
+console.log(myList.length);
