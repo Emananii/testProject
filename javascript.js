@@ -775,12 +775,14 @@ const someSlowOps = value => value.toUpperCase();
 
 //temp arr hold obj position and sort value
 const mapped = data.map((v, i) => {
-    return {i, value: someSlowOps(v), length: v.length}
+    return {i, value: someSlowOps(v)}
 }); 
 console.log(data);
-console.log(mapped);
+console.log(mapped); //should return an unsorted array
+
 //sort the map arr containing the reduced val
-mapped.sort((a,b) => {
+
+const newMapped = mapped.sort((a,b) => {
     if(a.value < b.value){
         return -1;
     } else if (a.value > b.value){
@@ -788,7 +790,9 @@ mapped.sort((a,b) => {
     }
     return 0;
 })
-console.log(mapped);
+
+console.log(newMapped); // should return a sorted array
+
 const newResult = mapped.map((v) =>data[v.i]);
 console.log(newResult);
 
@@ -797,3 +801,61 @@ const arrTest = ["a", "b", "c"];
 arrTest.map((element, index, array) => {
     console.log(`Element: ${element}, Index: ${index}, Array: ${array}`);
 });
+
+const newArray = [30, 10, "new", 50, 67, 250];
+console.log(newArray);
+const sortedNewArray = newArray.sort((a,b) => {
+    if (typeof a === "number" && typeof b === "number") return a-b;
+    if (typeof a === "number") return -1;
+    if (typeof b === "number") return 1;
+});
+console.log(newArray);
+console.log(sortedNewArray);
+
+// const numbers = [3,1,4,1,5];
+// const mappedNum = numbers.map(e=>console.log(e));
+// console.log(mappedNum)
+// console.log(numbers)
+// const sorted = numbers.sort((a,b) =>a-b);
+// console.log(sorted)
+// sorted[0]=10;
+// console.log(numbers[0]);
+
+//filter method
+const a1 = ["a", 10, "b", 20, "c", 30]
+const a2 = a1.filter((item)=>typeof item === "number")
+console.log(a1);
+console.log(a2);
+
+const numbers = [3, -1, 1, 4, 1, 5, 9, 2, 6]       //[3,1,4,1,5,9,2,6]
+const averaged = numbers.filter((num) => num > 0).map((num, index, arr) =>{
+    const prev = arr[index - 1];
+    console.log(`prev: ${prev}`);
+    const next = arr[index + 1];
+    console.log(`next: ${next}`)
+    console.log()
+    let count = 1;
+    let total = num;
+    console.log(`total: ${total}`)
+
+    if (prev !== undefined){
+        count++;
+        console.log(`PrevCount: ${count}`)
+        total += prev;
+        console.log(`PrevTotal: ${total}`)
+
+    }
+
+    if(next !== undefined){
+        count ++;
+        console.log(`NextCount: ${count}`)
+        total += next;
+        console.log(`NextTotal: ${total}`)
+    }
+
+    const average = total/count
+    console.log(average);
+    return Math.round(average *100)/100
+})
+
+console.log(averaged);
