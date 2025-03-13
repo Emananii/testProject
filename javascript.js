@@ -931,3 +931,66 @@ const oldFavAnime = ["Bleach", "Dragon ball", "Gintama", "One Piece", "Naruto"];
 const currentFavAnime = [...oldFavAnime.slice(0,1), ...oldFavAnime.slice(3), "Solo Leveling", "Frieren"];
 console.log(oldFavAnime);
 console.log(currentFavAnime);
+
+//spread operator in objects
+const obj1 = {ele: "bar", x :10};
+const objj = {bar : "baz", y:13};
+
+const mergedObj = {x:41, ...obj1, ...objj, y: 9};
+console.log(obj1, "", objj);
+console.log(mergedObj);
+
+const isSummer = true;
+const fruits = {
+    apple:10,
+    banana:5,
+
+    ...(isSummer?{watermelon: 30}:{} ),
+}
+
+
+console.log(fruits)
+
+//rest operator
+function summ(...theArgs){
+    let total = 0;
+    for (const arg of theArgs){
+        total += arg;
+    }
+    return total;
+}
+
+console.log(summ(1,2,3))
+
+// function sum(x,y,z){
+//     return x + y + z;
+// }
+
+// const nnumbers = [1 , 2 , 3];
+// sum(...nnumbers)
+//restrictions using rest
+/* it has to be the last parameter
+   a function definition can only have one rest parameter
+   trailing commas are not allowed after the rest parameter
+   the rest parameter cannot have a default value*/
+
+function sumn(a, b, c) {
+    return a + b + c;
+  }
+  
+  const newNumbers = [1, 2, 3];
+  
+  console.log(sumn(...newNumbers)); //this is spread because it expands the array elements into arguments
+
+  //destructuring
+  let abs,chest, rest;
+  [chest,abs, ...rest] =[ 10,20,30,40, 50]
+  console.log(rest);//rest took the rest of the elements and collected them in one array
+
+const objec = {prop1: 'x', prop2: 'y', prop3: 'z'};
+const {prop1, ...rested} = objec;
+//const e = objec. a and f = objec.b and j = objec.c
+
+console.log(prop1);
+console.log(rested);
+console.log(objec)
