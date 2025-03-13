@@ -859,3 +859,75 @@ const averaged = numbers.filter((num) => num > 0).map((num, index, arr) =>{
 })
 
 console.log(averaged);
+
+//flatmap => similar to using the map method + flat but it flattens the result by a depth of one
+const a3 =["a", "b", "c"];
+const a4 = a3.flatMap((item) => [item.toUpperCase(), item.toLocaleLowerCase()]);
+const a5 = a3.map((item) => [item.toUpperCase(), item.toLowerCase()]);
+console.log(a4);
+console.log(a5);
+
+//find => finds the first element that the callback function finds to be true
+const findNum = a1.find((item) => typeof item === "number");
+console.log(findNum);
+
+//findlast => finds the last element that the callback function finds to be true
+const findLastItem = a1.findLast((item) => typeof item === "number");
+console.log(findLastItem);
+
+//findindex => finds the last element that the callback function finds to be true
+const findNumIndex = a1.findIndex((item) => typeof item === "number");
+console.log(findNumIndex);
+
+//findlastIndex => finds the last element that the callback function finds to be true
+const findLastNumIndex = a1.findLastIndex((item) => typeof item === "number");
+console.log(findLastNumIndex);
+
+//every => checks if every item in the array satisfies the callback function and returns boolean
+function isNumber(val){
+    return typeof val === "number";
+}
+
+console.log(a1.every(isNumber));
+
+//some => checks if a single item in the array satisfies the callback function and returns boolean
+console.log(a1.some(isNumber));
+
+/*reduce => calls the specified callback function for every element. The return value of
+the callback is the accumulated result, which is then provided as an argument in the next
+call of the callback function. If no initial value is given, it uses the first element
+as the first value and therefore begins the operation with the second value. */
+const a = [10, 20, 30, 40]
+const total =a.reduce((accumulator, currentValue) => accumulator + currentValue);
+console.log(total);
+
+const obj = [{x:1}, {x:2}, {x:3}];
+const sum = obj.reduce((acc, curVal) => acc + curVal.x, 0);
+console.log(sum);
+
+const names = ["Alicia", "Brian", "Bruce", "Laureen"]
+const countedNames = names.reduce((allNames, name)=>{
+    const currCount = Object.hasOwn(allNames, name) ? allNames[name] : 0
+    return {
+        ...allNames,
+        [name] : currCount + 1
+    }
+}, {})
+
+
+//revising push method (destructive)
+firstArray = [5,6];
+const pushedArray = firstArray.push(4, 8, 10)
+console.log(pushedArray); 
+console.log(firstArray);
+
+//revising slice method (non-destructive)
+const slicedArray = firstArray.slice(-2, -1);
+console.log(slicedArray);
+console.log(firstArray);
+
+//using slice with the spread operator => remember that slice selects the elements and copies them into the new array
+const oldFavAnime = ["Bleach", "Dragon ball", "Gintama", "One Piece", "Naruto"];
+const currentFavAnime = [...oldFavAnime.slice(0,1), ...oldFavAnime.slice(3), "Solo Leveling", "Frieren"];
+console.log(oldFavAnime);
+console.log(currentFavAnime);
